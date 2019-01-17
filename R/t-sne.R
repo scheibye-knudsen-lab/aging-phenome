@@ -1,0 +1,5 @@
+features_zscore <- read.table("../data/Zscore_file_95_terms.csv", header = T, sep = ";")
+terms <- readLines("../data/Final_list_95_terms_capitalized_single_words.txt")
+write.table(t(features_zscore), sep = "\t", row.names = FALSE, col.names = FALSE, file = "../data/vectors.tsv")
+write.table(terms, sep = "\t", row.names = FALSE, col.names = FALSE, file = "../data/metadata.tsv")
+paste(terms, collapse = "|")
