@@ -11,7 +11,7 @@ Created on Wed Sep 26 13:27:40 2018
 
 @author: soren
 """
-### New Features ###
+### New terms ###
 
 ## Importing relevant packages ##
 
@@ -19,7 +19,7 @@ import os
 
 ## Sub directories ##
 
-Sub_in = "New terms mining/Found SNOMED terms/Test"
+Sub_in = "New terms mining/Found SNOMED terms/"
 
 Sub_out_main = "New terms mining"
 Sub_out = "New terms mining/New word list"
