@@ -5,7 +5,7 @@ Created on Mon Oct  8 14:31:39 2018
 @author: soren
 """
 
-### PMID - Abstracts - Aging Features from Snowmed Extension ###
+### PMID - Abstracts - Human Aging Pheome terms with Snowmed Extension ###
 
 ### Aging feature found -> Pmid with abstracts ###
 
