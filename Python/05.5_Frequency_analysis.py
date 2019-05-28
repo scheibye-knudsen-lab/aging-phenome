@@ -5,22 +5,18 @@ Created on Fri Dec  7 16:11:34 2018
 @author: soren
 """
 
-### vector file to binary and z-score ###
+### Frequency analysis for 'two or more' or atleast one occurrences ###
 
 #packages
 
 import os
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt; plt.rcdefaults()
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-#from scipy.stats import zscore
 
 # directories
 
 
-Sub_in = "PubMed Search/Aging terms found in abstracts"
+Sub_in = "PubMed Search/Clinical terms found in abstracts"
 
 Sub_out = "Frequency analysis"
 
@@ -31,7 +27,7 @@ try:
 except Exception:
     pass
 
-vector_file_in = "Aging_features_found_in_Abstract_categorical.txt"
+vector_file_in = "Clinical_terms_found_in_abstracts_SNOMED_extension.txt"
 
 
 #get bar char variables
