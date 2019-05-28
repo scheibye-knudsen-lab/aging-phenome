@@ -13,7 +13,7 @@ import os
 
 ## Directories ##
 
-Sub_in = "New terms mining/Found SNOMED terms/Test"
+Sub_in = "New terms mining/Found SNOMED terms"
 
 File_out = "concatenated_PMID_terms_found.txt"
 
