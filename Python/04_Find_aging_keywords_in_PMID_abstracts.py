@@ -5,9 +5,9 @@ Created on Mon Oct  8 14:31:39 2018
 @author: soren
 """
 
-### PMID - Abstracts - Aging Features from Snowmed Extension ###
+### PMID - Abstracts - Aging keywords from Snowmed Extension ###
 
-### Aging feature found -> Pmid with abstracts ###
+### Aging keywords found -> Pmid with abstracts ###
 
 ## Import packages ##
 
@@ -20,7 +20,7 @@ Sub_in = "Term lists"
 Sub_in2 = "PMID with Abstracts"
 
 Sub_out_main = "PubMed Search"
-Sub_out = "PubMed Search/Aging synonyms found in abstracts"
+Sub_out = "PubMed Search/Aging keywords found in abstracts"
 
 #Create folders if they do not exist
 
@@ -36,14 +36,14 @@ except Exception:
 
 ## Files ##
 
-File1 = "Aging synonyms.txt"
+File1 = "Aging keywords.txt"
 File2 = "pmid_abstract.txt"
 
-File_out = "Aging_synonyms_found_in_abstracts_SNOMED_extension.txt"
+File_out = "Aging_keywords_found_in_abstracts_SNOMED_extension.txt"
 
 ## Variables ##
 
-feature_list = {}
+keywords_list = {}
 PMID_Abstract = {}
 PMID_Found_feature = {}
 
@@ -64,7 +64,7 @@ percentage = 0
 with open(os.path.join(Sub_in,File1), "r") as feature_file:
     for line in feature_file:
         line = line.strip().split(';')
-        feature_list[line[0]] = line
+        keywords_list[line[0]] = line
 feature_file.close
 
 #To handle the 22gb large file (pmid with abstract) the file is read and handled on the go.
@@ -74,12 +74,12 @@ with open(os.path.join(Sub_in2,File2), "r",encoding="utf-8") as pmid_file:
         #Trying to to find aging terms in abstracts
         
         #Reset variables
-        Found_features = [0]*len(feature_list)
+        Found_features = [0]*len(keywords_list)
         Counter = 0
         
         #Run through features
-        for feature in feature_list:
-            for features in feature_list[feature]:
+        for feature in keywords_list:
+            for features in keywords_list[feature]:
                 #check if ";" is incorporated in an abstract and handle if present, else search abstracts for features
                 if len(line) > 2:
                     for abstract_piece in line[1:]:
@@ -105,7 +105,7 @@ pmid_file.close
 
 print("Search done!")
 
-#Writes the Clinical feature found to a file: Header with mimnumber + features (from feature list)
+#Writes the Aging keywords found to a file: Header with mimnumber + features (from feature list)
 with open(os.path.join(Sub_out,File_out), "w+") as PMID_Found_feature_file:
     PMID_Found_feature_file.write("PMID;{}\n".format(';'.join(map(str, feature_list.keys())))) 
     for key in PMID_Found_feature:
