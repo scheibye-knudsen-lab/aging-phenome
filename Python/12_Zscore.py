@@ -7,6 +7,8 @@ Created on Tue Nov 27 16:41:50 2018
 
 ### vector file to z-score ###
 
+# The Clinical terms, aging keywords, and the 994 words matrices were combined into the Aging_term_and_synonyms_and_word_list_binary.csv
+
 #packages
 
 import os
@@ -17,7 +19,7 @@ from scipy.stats import zscore
 
 Sub_in = "Word embeddings matrix"
 
-Vector_file = "Aging_term_and_synonyms_and_word_list_binary.csv"
+Vector_file = "Clinical_term_and_Aging_keywords_and_word_list_binary.csv"
 
 Zscore_file = "Zscore_matrix.csv"
 
