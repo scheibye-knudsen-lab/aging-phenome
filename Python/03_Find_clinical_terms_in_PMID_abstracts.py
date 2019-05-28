@@ -5,9 +5,9 @@ Created on Mon Oct  8 14:31:39 2018
 @author: soren
 """
 
-### PMID - Abstracts - Aging Features from Snowmed Extension ###
+### PMID - Abstracts - Clinical terms from Snowmed Extension ###
 
-### Aging feature found -> Pmid with abstracts ###
+### Clinical terms found -> Pmid with abstracts ###
 
 ## Import packages ##
 
@@ -20,7 +20,7 @@ Sub_in = "Term lists"
 Sub_in2 = "PMID with Abstracts"
 
 Sub_out_main = "PubMed Search"
-Sub_out = "PubMed Search/Aging terms found in abstracts"
+Sub_out = "PubMed Search/Clinical terms found in abstracts"
 
 try:
     os.mkdir(Sub_out_main)
@@ -34,10 +34,10 @@ except Exception:
 
 ## Files ##
 
-File1 = "Aging_terms_list_SNOMED_extension.txt"
+File1 = "Clinical_terms_list_SNOMED_extension.txt"
 File2 = "pmid_abstract.txt"
 
-File_out = "Aging_terms_found_in_abstracts_SNOMED_extension.txt"
+File_out = "Clinical_terms_found_in_abstracts_SNOMED_extension.txt"
 
 ## Variables ##
 
@@ -69,7 +69,7 @@ feature_file.close
 with open(os.path.join(Sub_in2,File2), "r",encoding="utf-8") as pmid_file:
     for line in pmid_file:
         line = line.strip().split(';')
-        #Trying to to find aging terms in abstracts
+        #Trying to to find Clinical terms in abstracts
         
         #Reset variables
         Found_features = [0]*len(feature_list)
@@ -103,7 +103,7 @@ pmid_file.close
 
 print("Search done!")
 
-#Writes the Clinical feature found to a file: Header with mimnumber + features (from feature list)
+#Writes the Clinical terms found to a file: Header with mimnumber + features (from feature list)
 with open(os.path.join(Sub_out,File_out), "w+") as PMID_Found_feature_file:
     PMID_Found_feature_file.write("PMID;{}\n".format(';'.join(map(str, feature_list.keys())))) 
     for key in PMID_Found_feature:
