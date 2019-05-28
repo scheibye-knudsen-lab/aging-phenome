@@ -5,7 +5,7 @@ Created on Tue Dec 18 16:52:58 2018
 @author: soren
 """
 
-### Random Feature Analysis version 4 ###
+### Correlation of clinical terms and aging keywords ###
 
 import os
 import random
@@ -14,14 +14,14 @@ from scipy.stats import chisquare
 
 ## Subdirectories ##
 
-Sub_in = "PubMed Search/Aging terms found in abstracts"
-Sub_in_2 = "PubMed Search/Aging synonyms found in abstracts"
+Sub_in = "PubMed Search/Clinical terms found in abstracts"
+Sub_in_2 = "PubMed Search/Aging keywords found in abstracts"
 Sub_in_3 = "PMID with Abstracts"
 
-Sub_out_main = "Validation of the aging terms"
-Sub_out = "Validation of the aging terms\Random Terms Found"
-Sub_out_2 = "Validation of the aging terms\Random pmid lists"
-Sub_out_3 = "Validation of the aging terms\Evaluation table"
+Sub_out_main = "Validation of the clinical terms"
+Sub_out = "Validation of the clinical terms\Random Terms Found"
+Sub_out_2 = "Validation of the clinical terms\Random pmid lists"
+Sub_out_3 = "Validation of the clinical terms\Evaluation table"
 
 #Create folders if they do not exist
 
@@ -47,8 +47,8 @@ except Exception:
 
 ## Files ##
 
-Aging_terms_found_vector_file = "Aging_terms_found_in_abstracts_SNOMED_extension.txt"
-Aging_synonyms_found = "Aging_synonyms_found_in_abstracts_SNOMED_extension.txt"
+Clinical_terms_found_vector_file = "Clinical_terms_found_in_abstracts_SNOMED_extension.txt"
+Aging_keywords_found = "Aging_keywords_found_in_abstracts_SNOMED_extension.txt"
 
 PMID_file = "pmid_abstract.txt"
 File_out_concatenated = "All_samples_feature_found.txt"
@@ -60,7 +60,7 @@ sample = 100
 Random_pmid_number = 0
 Aging_synonyms_pmid = []
 #Get number of pmids of aging synonyms
-with open(os.path.join(Sub_in_2,Aging_synonyms_found), "r") as pmid_file:
+with open(os.path.join(Sub_in_2,Aging_keywords_found), "r") as pmid_file:
     #skip header
     next(pmid_file)
     for line in pmid_file:
@@ -88,7 +88,7 @@ with open(os.path.join(Sub_in_3,PMID_file), "r",encoding="utf8") as PMID_LIST:
         pmid_list_length += 1
 PMID_LIST.close
 
-with open(os.path.join(Sub_in,Aging_terms_found_vector_file), "r") as Vector_file:
+with open(os.path.join(Sub_in,Clinical_terms_found_vector_file), "r") as Vector_file:
     #skip header
     next(Vector_file)
     for line in Vector_file:
@@ -98,7 +98,7 @@ Vector_file.close
 #load feature vector list
 
 Header_flag = 0
-with open(os.path.join(Sub_in,Aging_terms_found_vector_file), "r") as Vector_file:
+with open(os.path.join(Sub_in,Clinical_terms_found_vector_file), "r") as Vector_file:
     #reset progress
     File_line_counter = 0
     percentage = 0
