@@ -5,7 +5,7 @@ Created on Wed Sep  5 09:05:52 2018
 @author: soren
 """
 
-### Find features in abstracts version 2 ###
+### Find new terms in aging-related abstracts ###
 
 ## import packages ##
 
@@ -15,7 +15,7 @@ import re
 ## Directories ##
 
 Sub_in = "Term lists"
-Sub_in_2 = "New terms mining/PMID shared Aging terms and Synonyms"
+Sub_in_2 = Sub_in_2 = "New terms mining/PMID shared Clinical terms and Aging keywords"
 Sub_in_3 = "PMID with Abstracts"
 
 Sub_out_main = "New terms mining"
@@ -41,7 +41,7 @@ Abstracts = {}
 ## files ##
 
 file1 = "SNOWMED_Terms_list_cleaned.txt"
-file2 = "Combined_Aging_terms_and_synonyms_PMID_list.txt"
+file2 = "Combined_Clinical_terms_and_keywords_PMID_list.txt"
 file3 = "pmid_abstract.txt"
 
 ## Load files ##
