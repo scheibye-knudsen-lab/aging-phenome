@@ -5,7 +5,7 @@ Created on Wed Feb 20 15:04:01 2019
 @author: soren
 """
 
-### Create Matrix ###
+### Create Sum Matrix ###
 
 ## import ##
 
